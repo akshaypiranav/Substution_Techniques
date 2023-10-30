@@ -36,13 +36,13 @@ def caesar_cipher_decrypt(encrypted_text, shift):
 def caeserCipherEncryption(request):
     if request.method=="POST":
         pass
-    return render(request, "caeserCipher.html")
+    return render(request, "caeserCipherEncryption.html")
 
 
 def caeserCipherDecryption(request):
     if request.method=="POST":
         pass
-    return render(request, "caeserCipher.html")
+    return render(request, "caeserCipherDecryption.html")
 
 ###########################################################################################################
 
@@ -92,11 +92,11 @@ def decrypt_monoalphabetic(ciphertext, key):
 
 def monoalphabeticCipherEncryption(request):
     #give key
-    return render(request,"monalphabeticCipher.html")
+    return render(request,"monoalphabeticCipherEncryption.html")
 
 
 def monoalphabeticCipherDecryption(request):
-    return render(request,"monalphabeticCipher.html")
+    return render(request,"monoalphabeticCipherDecryption.html")
 ###########################################################################################################
 
 #PLAY FAIR CIPHER
@@ -195,11 +195,11 @@ def playfair_decrypt(ciphertext, key):
 def playfairCipherEncryption(request):
     # key = "keyword"
     # plaintext = "hello world"
-    return render(request,"playfairCipher.html")
+    return render(request,"playfairCipherEncryption.html")
 
 
 def playfairCipherDecryption(request):
-    return render(request,"playfairCipher.html")
+    return render(request,"playfairCipherDecryption.html")
 ############################################################################################################
 
 #HILL CIPHER
@@ -268,10 +268,10 @@ def decrypt_hill_cipher(ciphertext, key_matrix):
 def hillCipherEncryption(request):
     #key_matrix = np.array([[6, 24, 1], [13, 16, 10], [20, 17, 15]])  
 
-    return render(request,"hillCipher.html")
+    return render(request,"hillCipherEncryption.html")
 
 def hillCipherDecryption(request):
-    return render(request,"hillCipher.html")
+    return render(request,"hillCipherDecryption.html")
 ###########################################################################################################
 
 #POLYALPHABETIC CIPHER
@@ -309,11 +309,11 @@ def decrypt_vigenere(ciphertext, key):
     return decrypted_text
 
 def polyalphabeticCipherEncryption(request):
-    return render(request,"polyalphabeticChiper.html")
+    return render(request,"polyalphabeticCipherEncryption.html")
 
 
 def polyalphabeticCipherDecryption(request):
-    return render(request,"polyalphabeticChiper.html")
+    return render(request,"polyalphabeticCipherDecryption.html")
 
 ############################################################################################################
 
@@ -341,10 +341,10 @@ def decrypt_one_time_pad(ciphertext, one_time_pad):
 
 
 def onetimePadEncryption(request):
-    return render(request,"onetimePad.html")
+    return render(request,"onetimePadEncryption.html")
 
 
 def onetimePadDecryption(request):
-    return render(request,"onetimePad.html")
+    return render(request,"onetimePadDecryption.html")
 
 #############################################################################################################
