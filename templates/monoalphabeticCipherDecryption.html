@@ -6,6 +6,21 @@ MONO ALPHABETIC CIPHER DECRYPTION | ENCR/DECR
 
 {% block content %}
 {% include "navbar.html" %}
-
+<body class="container-fluid bg-dark text-white text-center">
+    <br><br><h1 class="fw-bold display-4">MONOALPHABETIC CIPHER DECRYPTION</h1>
+    <div class="container bg-dark rounded border border-white col-offset-5 col-md-5 col-xs-5 col-s-5" style="margin-top: 80px;">
+        <br>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <h1 class="fw-bold ">FILL THE DETAILS</h1><br>
+        <input type="text" name="words" id="" placeholder="ENTER THE WORDS THAT YOU WANT TO DECRYPT" class="form form-control"><br>
+        <input type="text" name="keyValue" id="" placeholder="ENTER THE KEY WORD " class="form form-control"><br>
+        <input type="submit" value="DECRYPT" class="btn btn-primary w-100"><br><br>
+        {% if result %}
+        <h4>DECRYPTED : {{result}}</h4>
+        {% endif %}
+    </form>
+    </div>
+</body>
 
 {% endblock %}

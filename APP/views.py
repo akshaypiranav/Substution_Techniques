@@ -35,13 +35,20 @@ def caesar_cipher_decrypt(encrypted_text, shift):
 
 def caeserCipherEncryption(request):
     if request.method=="POST":
-        pass
+        wordValue=request.POST.get("words")
+        shiftValue=int(request.POST.get("shiftValue"))
+        result=caesar_cipher_encrypt(wordValue,shiftValue)
+
+        return render(request, "caeserCipherEncryption.html",{"result":result})
     return render(request, "caeserCipherEncryption.html")
 
 
 def caeserCipherDecryption(request):
     if request.method=="POST":
-        pass
+        wordValue=request.POST.get("words")
+        shiftValue=int(request.POST.get("shiftValue"))
+        result=caesar_cipher_decrypt(wordValue,shiftValue)
+        return render(request, "caeserCipherDecryption.html",{"result":result})
     return render(request, "caeserCipherDecryption.html")
 
 ###########################################################################################################
@@ -91,11 +98,21 @@ def decrypt_monoalphabetic(ciphertext, key):
 
 
 def monoalphabeticCipherEncryption(request):
-    #give key
+    if request.method=="POST":
+        print("INSIDE MAMEH")
+        key = "zyxwvutsrqponmlkjihgfedcba"
+        wordValue=request.POST.get("words")
+        result=encrypt_monoalphabetic(wordValue,key)
+        return render(request,"monoalphabeticCipherEncryption.html",{"result":result})
     return render(request,"monoalphabeticCipherEncryption.html")
 
 
 def monoalphabeticCipherDecryption(request):
+    if request.method=="POST":
+        key = "zyxwvutsrqponmlkjihgfedcba"
+        wordValue=request.POST.get("words")
+        result=decrypt_monoalphabetic(wordValue,key)
+        return render(request,"monoalphabeticCipherDecryption.html",{"result":result})
     return render(request,"monoalphabeticCipherDecryption.html")
 ###########################################################################################################
 
@@ -193,12 +210,20 @@ def playfair_decrypt(ciphertext, key):
     return plaintext
 
 def playfairCipherEncryption(request):
-    # key = "keyword"
-    # plaintext = "hello world"
+    if request.method=="POST":
+        key = request.POST.get("keyValue")
+        wordValue=request.POST.get("words")
+        result=playfair_encrypt(wordValue,key)
+        return render(request,"monoalphabeticCipherEncryption.html",{"result":result})    
     return render(request,"playfairCipherEncryption.html")
 
 
 def playfairCipherDecryption(request):
+    if request.method=="POST":
+        key = request.POST.get("keyValue")
+        wordValue=request.POST.get("words")
+        result=playfair_decrypt(wordValue,key)
+        return render(request,"monoalphabeticCipherEncryption.html",{"result":result}) 
     return render(request,"playfairCipherDecryption.html")
 ############################################################################################################
 
