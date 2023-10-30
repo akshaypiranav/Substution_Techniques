@@ -1,0 +1,82 @@
+{% extends "header.html" %}
+
+{% block title %}
+HOME | ENCR/DECR
+{% endblock title %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<div class="container-fluid bg-dark text-white">
+    <br><br>
+<div class="container border border-white rounded"><br>
+<h1 class="display-4 fw-bold text-center">SELECT A SUBSTITUTION TECHNIQUE</h1><br>
+<div class="card bg-dark text-white border border-white" >
+    <div class="card-header border border-white">
+      TYPE-1
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">CAESAR CIPHER</h5>
+      <p class="card-text">The Caesar cipher is a simple substitution cipher in which each letter in the plaintext is shifted a fixed number of positions down or up the alphabet. It is named after Julius Caesar, who is believed to have used this technique to encrypt his messages. It's an elementary form of encryption.</p>
+      <a href="{% url 'caeserCipher' %}" class="btn btn-primary fw-bold">Click Here</a>
+    </div>
+
+</div>
+<br>
+<div class="card bg-dark text-white border border-white">
+    <div class="card-header border border-white">
+      TYPE-2
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">MONOALPHABETIC CIPHER</h5>
+      <p class="card-text">A monoalphabetic cipher is a substitution cipher in which each letter in the plaintext is replaced by a corresponding fixed letter in the ciphertext. This means that each letter is consistently replaced by a single letter, making it relatively easy to decipher through frequency analysis. It lacks strong security.</p>
+      <a href="{% url 'monoalphabeticCipher' %}" class="btn btn-primary fw-bold">Click Here</a>
+    </div>
+  </div><br>
+<div class="card bg-dark text-white border border-white">
+    <div class="card-header border border-white">
+      TYPE-3
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">PLAYFAIR CIPHER</h5>
+      <p class="card-text">The Playfair cipher is a polygraphic substitution cipher that encrypts pairs of letters in the plaintext. It uses a 5x5 grid of letters, omitting one letter, typically 'J.' Rules govern how to handle repeated and adjacent letters. It offers better security than monoalphabetic ciphers but is still vulnerable to modern cryptanalysis.</p>
+      <a href="{% url 'playfairCipher' %}" class="btn btn-primary fw-bold">Click Here</a>
+    </div>
+  </div><br>
+<div class="card bg-dark text-white border border-white">
+    <div class="card-header border border-white">
+      TYPE-4
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">HILL CIPHER</h5>
+      <p class="card-text">
+        The Hill cipher is a polygraphic substitution cipher that encrypts letter pairs or triplets using matrix multiplication. It offers superior security compared to basic ciphers but necessitates a secret key matrix. Decryption involves matrix algebra, adding complexity to the process. This makes it more secure but also more challenging to implement than simple substitution ciphers.</p>
+      <a href="{% url 'hillCipher' %}" class="btn btn-primary fw-bold">Click Here</a>
+    </div>
+  </div><br>
+<div class="card bg-dark text-white border border-white">
+    <div class="card-header border border-white">
+      TYPE-5
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">POLYALPHABETIC CIPHER</h5>
+      <p class="card-text">
+        A polyalphabetic cipher is a cryptographic method where each letter in the plaintext is encrypted with multiple different substitution rules or alphabets. These rules change based on the position of the letter in the plaintext or with a predefined key. The most famous example is the Vigenère cipher. This complexity enhances security compared to monoalphabetic ciphers.</p>
+      <a href="{% url 'polyalphabeticCipher' %}" class="btn btn-primary fw-bold">Click Here</a>
+    </div>
+  </div><br>
+<div class="card bg-dark text-white border border-white">
+    <div class="card-header border border-white">
+      TYPE-6
+    </div>
+    <div class="card-body bg-dark text-white">
+      <h5 class="card-title">ONE-TIME PAD</h5>
+      <p class="card-text">
+        The one-time pad is a secure encryption method using a random, secret key matching the plaintext's length. It employs XOR operations for encryption. As the key is used once, and ciphertext reveals nothing about the plaintext, it's theoretically unbreakable. But it necessitates secure key exchange, limiting practicality in most applications.</p>
+      <a href="{% url 'onetimePad' %}" class="btn btn-primary fw-bold">Click Here</a>
+    </div>
+  </div><br>
+</div>
+</div>
+
+{% endblock %}
