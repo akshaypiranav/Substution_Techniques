@@ -21,18 +21,35 @@ from APP import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.index,name="index"),
+#########################################################################################################
     #CAESER CIPHER 
     path("caeserCipher",views.caeserCipher,name="caeserCipher"),
     path("caeserCipherEncryption",views.caeserCipherEncryption,name="caeserCipherEncryption"),
     path("caeserCipherDecryption",views.caeserCipherDecryption,name="caeserCipherDecryption"),
-
-    
+#########################################################################################################
+    #MONOALPHABETIC CIPHER
     path("monoalphabeticCipher",views.monoalphabeticCipher,name="monoalphabeticCipher"),
+    path("monoalphabeticCipherEncryption",views.monoalphabeticCipherEncryption,name="monoalphabeticCipherEncryption"),
+    path("monoalphabeticCipherDecryption",views.monoalphabeticCipherDecryption,name="monoalphabeticCipherDecryption"),
+##########################################################################################################
+    #PLAYFAIR CIPHER
     path("playfairCipher",views.playfairCipher,name="playfairCipher"),
-
+    path("playfairCipherEncryption",views.playfairCipherEncryption,name="playfairCipherEncryption"),
+    path("playfairCipherDecryption",views.playfairCipherDecryption,name="playfairCipherDecryption"),
+############################################################################################################
     #HILL CIPHER
     path("hillCipher",views.hillCipher,name="hillCipher"),
     path("hillCipherEncryption",views.hillCipherEncryption,name="hillCipherEncryption"),
+    path("hillCipherDecryption",views.hillCipherDecryption,name="hillCipherDecryption"),
+#########################################################################################################
+    #POLYALPHABETIC CIPHER
     path("polyalphabeticCipher",views.polyalphabeticCipher,name="polyalphabeticCipher"),
+    path("polyalphabeticCipherEncryption",views.polyalphabeticCipherEncryption,name="polyalphabeticCipherEncryption"),
+    path("polyalphabeticCipherDecryption",views.polyalphabeticCipherDecryption,name="polyalphabeticCipherDecryption"),
+
+#########################################################################################################
+    #ONE TIME PAD
     path("onetimePad",views.onetimePad,name="onetimePad"),
+    path("onetimePadEncryption",views.onetimePadEncryption,name="onetimePadEncryption"),
+    path("onetimePadDecryption",views.onetimePadDecryption,name="onetimePadDecryption"),
 ]
