@@ -29,7 +29,10 @@ urlpatterns = [
     
     path("monoalphabeticCipher",views.monoalphabeticCipher,name="monoalphabeticCipher"),
     path("playfairCipher",views.playfairCipher,name="playfairCipher"),
+
+    #HILL CIPHER
     path("hillCipher",views.hillCipher,name="hillCipher"),
+    path("hillCipherEncryption",views.hillCipherEncryption,name="hillCipherEncryption"),
     path("polyalphabeticCipher",views.polyalphabeticCipher,name="polyalphabeticCipher"),
     path("onetimePad",views.onetimePad,name="onetimePad"),
 ]

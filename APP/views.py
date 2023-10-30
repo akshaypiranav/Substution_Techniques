@@ -30,6 +30,13 @@ def playfairCipher(request):
 def hillCipher(request):
     return render(request,"hillCipher.html")
 
+def hillCipherEncryption(request):
+    return render(request,"hillCipher.html")
+
+def hillCipherDecryption(request):
+    return render(request,"hillCipher.html")
+
+
 
 def polyalphabeticCipher(request):
     return render(request,"polyalphabeticChiper.html")
