@@ -291,11 +291,19 @@ def decrypt_hill_cipher(ciphertext, key_matrix):
     return matrix_to_text(decrypted_matrix)
 
 def hillCipherEncryption(request):
-    #key_matrix = np.array([[6, 24, 1], [13, 16, 10], [20, 17, 15]])  
-
+    if request.method=="POST":
+        key_matrix = np.array([[6, 24, 1], [13, 16, 10], [20, 17, 15]])  
+        wordValue=request.POST.get("words")
+        result=encrypt_hill_cipher(wordValue,key_matrix)
+        return render(request,"hillCipherEncryption.html",{"result":result})
     return render(request,"hillCipherEncryption.html")
 
 def hillCipherDecryption(request):
+    if request.method=="POST":
+        key_matrix = np.array([[6, 24, 1], [13, 16, 10], [20, 17, 15]])  
+        wordValue=request.POST.get("words")
+        result=decrypt_hill_cipher(wordValue,key_matrix)
+        return render(request,"hillCipherEncryption.html",{"result":result})
     return render(request,"hillCipherDecryption.html")
 ###########################################################################################################
 

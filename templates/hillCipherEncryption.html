@@ -6,6 +6,20 @@ HILL CIPHER ENCRYPTION | ENCR/DECR
 
 {% block content %}
 {% include "navbar.html" %}
-
+<body class="container-fluid bg-dark text-white text-center">
+    <br><br><h1 class="fw-bold display-4">MONOALPHABETIC CIPHER ENCRYPTION</h1>
+    <div class="container bg-dark rounded border border-white col-offset-5 col-md-5 col-xs-5 col-s-5" style="margin-top: 80px;">
+        <br>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <h1 class="fw-bold ">FILL THE DETAILS</h1><br>
+        <input type="text" name="words" id="" placeholder="ENTER THE WORDS THAT YOU WANT TO ENCRYPT" class="form form-control"><br>
+        <input type="submit" value="ENCRYPT" class="btn btn-primary w-100"><br><br>
+        {% if result %}
+        <h4>ENCRYPTED : {{result}}</h4>
+        {% endif %}
+    </form>
+    </div>
+</body>
 
 {% endblock %}
